@@ -23,17 +23,17 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 $(call inherit-product, device/samsung/star2lte/device.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common Lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
+# Inherit some common Havoc stuff.
+$(call inherit-product, vendor/havoc/config/common_full_phone.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := star2lte
-PRODUCT_NAME := lineage_star2lte
+PRODUCT_NAME := havoc_star2lte
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := SM-G965F
 PRODUCT_MANUFACTURER := samsung
 PRODUCT_PDA_MODEL := G965F
-PRODUCT_PDA_MODEL_VERSION := XXU9ETF6
+PRODUCT_PDA_MODEL_VERSION := XXUAETG3
 PRODUCT_PDA_VERSION := $(PRODUCT_PDA_MODEL)$(PRODUCT_PDA_MODEL_VERSION)
 PRODUCT_GMS_CLIENTID_BASE := android-samsung
 
@@ -47,6 +47,4 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.build.PDA=$(PRODUCT_PDA_VERSION)
 
-# OTA
-PRODUCT_PROPERTY_OVERRIDES += \
-    lineage.updater.uri=https://raw.githubusercontent.com/synt4x93/OTA/master/star2lte.json
+export export HAVOC_BUILD_TYPE=Official
